@@ -51,7 +51,7 @@ class ViewController: UIViewController,URLSessionDelegate, URLSessionDownloadDel
         asyncBtn.setTitleColor(UIColor.black, for: .normal)
     }
     
-    //Button Click
+    //Button Click-----------------------------------------------------------------------------------------------------------------------------
     @IBAction func downloadBtnClicked(_ sender: Any) {
         syncBtn.isEnabled = false
         asyncBtn.isEnabled = false
@@ -153,7 +153,9 @@ class ViewController: UIViewController,URLSessionDelegate, URLSessionDownloadDel
         }
     }
     
-    //URLSessionDelegate, URLSessionDownloadDelegate
+    //URLSessionDelegate, URLSessionDownloadDelegate----------------------------------------------------------------------------------------------
+    
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         DispatchQueue.main.async {
             let written = self.byteFormatter.string(fromByteCount: totalBytesWritten)
